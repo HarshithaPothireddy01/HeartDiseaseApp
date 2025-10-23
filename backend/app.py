@@ -292,10 +292,12 @@ def get_sample_data():
     })
 
 if __name__ == '__main__':
+    import os
+    
     print("\n" + "="*70)
     print("HEART DISEASE PREDICTION API STARTING")
     print("="*70)
-    print("🚀 Server starting on http://localhost:5001")
+    print("🚀 Server starting on Render")
     print("📋 Available endpoints:")
     print("   GET  /api/health - Health check")
     print("   POST /api/predict - Heart disease prediction")
@@ -303,4 +305,7 @@ if __name__ == '__main__':
     print("   GET  /api/sample-data - Get sample data")
     print("="*70 + "\n")
     
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    # ✅ Use dynamic port assigned by Render
+    port = int(os.environ.get("PORT", 5001))
+    app.run(debug=False, host='0.0.0.0', port=port)
+
