@@ -4,6 +4,6 @@ pymongo==4.5.0
 groq==0.33.0
 python-dotenv==1.0.0
 certifi==2023.7.22
-gunicorn 
+gunicorn==21.2.0
 
 
